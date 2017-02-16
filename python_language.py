@@ -1,6 +1,6 @@
 #Python language study
 #To study this you could paste the code snippets into the python shell
-#or in the interactive shell in Visual Studio and se what it does.
+#or in the interactive shell in Visual Studio.
 #You could also step through it using the Visual Studio debugger.
 
 #math
