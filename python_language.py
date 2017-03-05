@@ -33,6 +33,13 @@ number = int(5.6) + 1
 print("Round up: " + str(number)) 
 
 
+#None -> like null in C, represents the absence of a value
+#--------------------------------------------------
+#print returns None. python adds return None to all functions with no return statement
+retVal = print("Hello")
+print(retVal)
+
+
 #strings, both '' and "" is valid for strings
 #--------------------------------------------------
 name = "Foo"
@@ -53,6 +60,13 @@ else:
 print("foo" * 5)
 
 languages = ['Lisp', 'Smalltalk', 'C', 'Python', 'Swift']
+
+#replace the newline character with empty string
+print("Foo", end='')
+print("Bar")
+
+#replace the separation
+print("banana", "orange", "apple", sep=', ')
 
 
 #boolean expressions and control flow
@@ -140,7 +154,7 @@ for n in range(1, 20):
 		continue #go back to start of the for loop
 	print(n)
 
-for x in range(1,41): 
+for x in range(1,20): 
 	if x%4 is 0:
 		print(x,"is a multiple of 4.") 
 	else:
@@ -149,10 +163,37 @@ for x in range(1,41):
 
 #functions
 #--------------------------------------------------
-def Foo(num):
-	print("Function")
+def foo(num):
+	print("Inside foo function")
 	amount = num * 10
 	return amount	
 
-print(Foo(0.5))
+print(foo(0.5))
 
+
+#scope
+#--------------------------------------------------
+def foobar():
+	num = 10                    #local variable
+	print("Scope:", variable)   #global variable
+
+variable = 9999                 #global variable
+foobar()
+
+def number():
+	#refer to the global variable
+	global variable
+	variable = 10
+
+number()
+print(variable)
+
+#exception handling
+#--------------------------------------------------
+def div(divideBy):
+	try:
+		return 42 / divideBy
+	except ZeroDivisionError:
+		print("Error!")
+
+print(div(0))
