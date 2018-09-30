@@ -6,6 +6,10 @@
 #math
 #--------------------------------------------------
 
+x=0
+x += 1
+print(x)
+
 #integer division/floored
 floored = 21 // 8
 print(floored)
@@ -13,6 +17,19 @@ print(floored)
 #division
 division = 21 / 8
 print(division)
+
+#exponent
+print(2**2)
+
+#modulo/remainder
+print(4%2)
+
+#swap two values
+x = 1
+y = 2
+x, y = y, x
+print(x, y)
+
 
 foo = 5
 
@@ -117,11 +134,11 @@ while foo < 10:
 
 #range loops
 #--------------------------------------------------
-for x in range(10):
-	print("Hello")
+for x in range(5):
+	print(x)
 
-#prints 5 to 19
-for x in range(5,20):
+#prints 5 to 9
+for x in range(5,10):
 	print(x)
 	
 #prints 5 to 19 in steps of 2
@@ -169,6 +186,16 @@ def foo(num):
 
 print(foo(0.5))
 
+#flexible amount of arguments
+def addNumbers(*args):
+	total = 0
+	for a in args:
+		total += a
+	print(total)
+
+addNumbers(3)
+addNumbers(43,43,11,56,3452,3525)
+
 
 #scope
 #--------------------------------------------------
@@ -187,6 +214,10 @@ def number():
 number()
 print(variable)
 
+def square(x):
+    return x**2
+
+print(square(8))
 
 #exception handling
 #--------------------------------------------------
@@ -197,47 +228,3 @@ def div(divideBy):
 		print("Error!")
 
 print(div(0))
-
-#lists, like arrays in C
-#--------------------------------------------------
-list = ['item0', 'item1', 'item2', 'item3']
-
-print(list)
-print(list[1])
-
-list2 = [['item0', 'item1'], [1, 5, 9, 7]]
-
-print(list2)
-print(list2[1][1])
-
-#negative indexes
-#-1 refers to the last index in a list
-#-2 refers to the second-to-last index, and so on
-print(list[-1])
-print(list[-3])
-
-#slices
-print(list[0:4])
-print(list[2:4])
-print(list[0:-1])
-print(list[:2])
-print(list[1:])
-list[-1] = 'ITEM3'
-print(list[:])
-
-#length of list
-print(len(list))
-
-#list concatenation 
-list3 = [23, 65, 33]
-newList = list + list3 * 2
-print(newList)
-
-#remove value from list
-del list3[2]
-print(list3)
-
-
-#dictonaries, like map in C++ (key, value)
-#--------------------------------------------------
-
